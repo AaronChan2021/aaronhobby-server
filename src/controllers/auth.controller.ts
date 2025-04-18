@@ -1,11 +1,9 @@
 // src/controllers/auth.controller.ts - 认证控制器
 import { Request, Response, NextFunction } from 'express'
-import { PrismaClient } from '@prisma/client'
+import { prisma } from '../lib/prisma'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { AppError } from '../utils/error'
-
-const prisma = new PrismaClient()
 
 export const login = async (
   req: Request,
